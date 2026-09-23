@@ -1,5 +1,6 @@
 export default defineNuxtRouteMiddleware(async (to) => {
-  if (to.path === "/login") {
+  const publicPaths = ["/login", "/mempool"];
+  if (publicPaths.includes(to.path)) {
     return;
   }
 
