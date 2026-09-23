@@ -12,6 +12,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/login": { prerender: true },
+    "/mempool": { ssr: true },
+    "/api/mempool": { headers: noStore },
     "/": { ssr: true, headers: privateNoStore },
     "/chat/**": { ssr: true, headers: privateNoStore },
     "/settings/**": { ssr: true, headers: privateNoStore },
