@@ -27,3 +27,23 @@ export interface MempoolSnapshot {
   tipHeight: number;
   fetchedAt: number;
 }
+
+export interface Utxo {
+  txid: string;
+  vout: number;
+  value: number;
+  status: {
+    confirmed: boolean;
+    block_height?: number;
+    block_time?: number;
+  };
+}
+
+export interface AddressUtxos {
+  address: string;
+  utxos: Utxo[];
+  totalValue: number;
+  confirmedValue: number;
+  unconfirmedValue: number;
+  count: number;
+}
